@@ -47,25 +47,25 @@ router.get('/userlist', function(req, res) {
 });
 
 
-router.get('/create', function(req, res) {
-    res.render('home/add');
+router.get('/adduser', function(req, res) {
+    res.render('home/adduser');
 });
 
 
-router.post('/create', function(req, res) {
+router.post('/adduser', function(req, res) {
 
     var user = {
-        username : req.body.username,
-        password : req.body.password,
-        email    : req.body.email,
-        type     : req.body.type
+        empNo     : req.body.empNo,
+        contactNo : req.body.password,
+        username  : req.body.username,
+        password  : req.body.password
     }
 
     userModel.insert(user, function(status) {
         if (status) {
-            res.redirect('/user/view_users');
+            res.redirect('/home/userlist');
         } else {
-            res.redirect('/user/create');
+            res.redirect('/home/adduser');
         }
     });
 });
