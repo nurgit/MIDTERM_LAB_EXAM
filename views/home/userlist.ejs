@@ -27,7 +27,7 @@
 			<td><%= userList[i].contactNo %></td>
 			<td><%= userList[i].username%></td>
 			<td><%= userList[i].password %></td>
-			<td><a href="/user/edit/<%= userList[i].id %>">EDIT</a> | <a href="/user/delete/<%= userList[i].id %>"> DELETE </a></td>
+			<td><a href="/home/update/<%= userList[i].empNo %>">EDIT</a> | <a href="/home/delete/<%= userList[i].empNo %>"> DELETE </a></td>
 		</tr>
 		<% } %>
 	</table>

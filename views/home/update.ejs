@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title></title>
+</head>
+
+<body>
+    <h1>update Employe Information </h1>
+    <form method="post">
+        <fieldset>
+            <legend>Edit user</legend>
+            <table class="center">
+              
+                <tr>
+                    <td>Employee No </td>
+                    <td>
+                       <input type="text" value="<%= user.empNo %>" name="empNo" id="username" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contacr No </td>
+                     <td>
+                       <input type="text" value="<%= user.contactNo %>" name="contactNo" id="password"  >
+                    </td>
+                </tr>
+                <tr>
+                    <td>User Email </td>
+                     <td>
+                       <input type="text" value="<%= user.username %>" name="username" id="email" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password </td>
+                     <td>
+                       <input type="password" value="<%= user.password %>" name="password" id="type" >
+                    </td>
+                </tr>
+                <tr>
+                <td><button type="submit" value="Update">Update</button></td>
+                </tr>
+            </table>
+
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

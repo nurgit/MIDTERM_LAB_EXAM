@@ -3,7 +3,7 @@ var db = require('./db');
 module.exports ={
 
 	get: function(id, callback){
-		var sql = "select * from user where id=?";
+		var sql = "select * from admin where id=?";
 		db.getResults(sql, [id], function(result){
 			if(result.length > 0){
 				callback(result[0]);
@@ -48,8 +48,8 @@ module.exports ={
 	},
 
 	update: function(user, callback){
-		var sql = "update user set username=?, password=?, type=? where id=?";
-		db.execute(sql, [user.uname, user.password, user.type, user.id], function(status){
+		var sql = "update admin set empNo=?, contactNo=?, username=? password=? where empNo=?";
+		db.execute(sql, [user.empNo, user.contactNo, user.username, user.password, user.empNo], function(status){
 			if(status){
 				callback(true);
 			}else{
@@ -59,7 +59,7 @@ module.exports ={
 	},
 
 	delete: function(id, callback){
-		var sql = "delete from user where id=?";
+		var sql = "delete from admin where empNo=?";
 		db.execute(sql, [id], function(status){
 			if(status){
 				callback(true);

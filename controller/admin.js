@@ -70,9 +70,9 @@ router.post('/adduser', function(req, res) {
     });
 });
 
-router.get('/update/:id', function(req, res){
+router.get('/update/:empNo', function(req, res){
 
-    userModel.get(req.params.id, function(result){
+    userModel.get(req.params.empNo, function(result){
         res.render('home/update', {user: result});
     });
 
@@ -82,7 +82,7 @@ router.post('/update/:username', function(req, res){
 
   var user = {
 
-    id               :req.params.id,
+    id               :req.params.empNo,
     username         :req.body.username,
     password         :req.body.password,
     email            :req.body.email,
@@ -93,9 +93,9 @@ router.post('/update/:username', function(req, res){
 
     userModel.update(user, function(status){
         if(status){
-            res.redirect('/user/view_users');
+            res.redirect('/home/userlist');
         }else{
-            res.redirect('/user/editProfile/'+req.params.id);
+            res.redirect('/home/update/'+req.params.id);
         }
     });
 });
