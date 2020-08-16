@@ -4,7 +4,7 @@ var bodyParser 	= require('body-parser');
 var login 		= require('./controller/admin');
  var login 		= require('./controller/login');
 //
-// var home 		= require('./controller/home');
+ var admin 		= require('./controller/admin');
 // var logout 		= require('./controller/logout');
 // var user		= require('./controller/userController');
 // var tutor       =require('./controller/tutor');
@@ -24,7 +24,7 @@ app.use(exSession({secret: 'my secret value', saveUninitialized: true, resave: f
 //app.use('/user', user);
 app.use('/login', login);
 //app.use('/logout', logout);
-//app.use('/home', home);
+ app.use('/home', admin);
 
 app.get('/', (req, res)=>{
 	res.render('index');

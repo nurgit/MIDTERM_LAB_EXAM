@@ -16,7 +16,7 @@ router.post('/', function(req, res){
 	userModel.validate(user, function(status){
 		if(status){
 			req.session.username = user.username;
-			res.redirect('/');
+			res.redirect('/home');
 		}else{
 			res.send('invalid username/password');
 		}
